@@ -10,31 +10,31 @@
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR",sans-serif;background:var(--bg);color:var(--text)}
 .app{min-height:100vh;display:flex;flex-direction:column}
 header{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(10px)}
-.brand{font-weight:850}.progress{font-size:13px;color:var(--muted)}
+.brand{font-weight:760}.progress{font-size:13px;color:var(--muted)}
 main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px}
 .slide{display:none;width:min(1240px,97vw);min-height:650px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:38px 42px;box-shadow:0 16px 44px rgba(0,0,0,.06)}
 .slide.active{display:block}
-.kicker{font-size:12px;color:var(--muted);font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin-bottom:7px}
+.kicker{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:7px}
 h1{font-size:46px;line-height:1.1;margin:0 0 10px}h2{font-size:30px;margin:0 0 18px}h3{font-size:20px;margin:0 0 8px}
 .sub{font-size:19px;color:var(--muted);line-height:1.6}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .card{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:19px}
-.label{font-size:12px;color:var(--muted);font-weight:800;letter-spacing:.04em}
-.big{font-size:27px;font-weight:850;margin:5px 0 7px}
+.label{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.04em}
+.big{font-size:27px;font-weight:760;margin:5px 0 7px}
 table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:14px}
 th,td{padding:12px 13px;border-bottom:1px solid var(--line);text-align:center;vertical-align:middle}
-th{background:#f8fafc;font-weight:800}
-th:first-child,td:first-child{text-align:left;font-weight:800;width:18%}
+th{background:#f8fafc;font-weight:700}
+th:first-child,td:first-child{text-align:left;font-weight:700;width:18%}
 tr:last-child td{border-bottom:0}
 ul{margin:5px 0 0 18px;padding:0;line-height:1.65}
-.question{font-size:22px;font-weight:850;line-height:1.35;margin-bottom:13px}
+.question{font-size:22px;font-weight:760;line-height:1.35;margin-bottom:13px}
 .callout{border-left:4px solid var(--dark);padding:12px 16px;background:#f8fafc;border-radius:0 12px 12px 0}
 .note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:12px}
 footer{display:flex;justify-content:center;gap:10px;padding:16px}
-button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:11px 22px;font-weight:750;font-size:15px;cursor:pointer}
+button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:11px 22px;font-weight:700;font-size:15px;cursor:pointer}
 button.primary{background:var(--dark);color:#fff;border-color:var(--dark)}
 button:disabled{opacity:.35;cursor:not-allowed}
-.tag{display:inline-block;padding:5px 9px;border-radius:999px;background:#e9edf3;font-size:11px;font-weight:800;margin:0 4px 4px 0}
+.tag{display:inline-block;padding:5px 9px;border-radius:999px;background:#e9edf3;font-size:11px;font-weight:700;margin:0 4px 4px 0}
 @media(max-width:850px){
   body{background:#fff}
   header{
@@ -147,6 +147,30 @@ button:disabled{opacity:.35;cursor:not-allowed}
   .card{padding:13px}
   th,td{font-size:10px;padding:8px 6px}
 }
+
+/* Presentation polish */
+.slide{background:linear-gradient(180deg,#fff 0%,#fdfdfd 100%)}
+.card{transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(17,24,39,.07)}
+table tbody tr:hover td{background:#fafafa}
+table td:not(:first-child){font-variant-numeric:tabular-nums}
+.kicker{display:flex;align-items:center;gap:7px}
+.kicker:before{content:"";width:7px;height:7px;border-radius:50%;background:#111827;display:inline-block}
+.card .label:before{margin-right:6px}
+.card:nth-child(1) .label:before{content:"◉"}
+.card:nth-child(2) .label:before{content:"◇"}
+.card:nth-child(3) .label:before{content:"△"}
+.callout b:first-child{font-weight:700}
+strong,b{font-weight:650}
+table b{font-weight:600}
+@media(min-width:851px){
+  .slide{padding:42px 48px}
+  table{font-size:14px}
+  th{font-weight:650}
+  th:first-child,td:first-child{font-weight:650}
+  .card{background:#fbfbfc}
+}
+
 </style>
 </head>
 <body>
@@ -160,18 +184,18 @@ button:disabled{opacity:.35;cursor:not-allowed}
   <table>
     <thead><tr><th>항목</th><th>마천3</th><th>상도15</th><th>약수</th></tr></thead>
     <tbody>
-      <tr><td>매수금액</td><td><b>11~12억</b></td><td><b>8~10억</b></td><td><b>9~10.5억</b></td></tr>
+      <tr><td>매수금액</td><td>11~12억</td><td>8~10억</td><td>9~10.5억</td></tr>
       <tr><td>공시가</td>
-          <td><b>약 3.9~5.1억</b><br><span class="note">11.1억 실거래 3.91억 / 11.87억 실거래 5.05억</span></td>
-          <td><b>약 1.8~3.7억</b><br><span class="note">최근 7.3~10억 실거래 기준</span></td>
-          <td><b>약 2억대</b></td></tr>
+          <td>약 3.9~5.1억<br><span class="note">11.1억 실거래 3.91억 / 11.87억 실거래 5.05억</span></td>
+          <td>약 1.8~3.7억<br><span class="note">최근 7.3~10억 실거래 기준</span></td>
+          <td>약 2억대</td></tr>
       <tr><td>초투</td><td>약 9~10억</td><td>약 6~8억</td><td>약 7~8억</td></tr>
-      <tr><td>총투 <span class="note">(추정)</span></td><td>약 21억</td><td>약 19억</td><td><b>약 20억</b></td></tr>
+      <tr><td>총투 <span class="note">(추정)</span></td><td>약 21억</td><td>약 19억</td><td>약 20억</td></tr>
       <tr><td>현재 단계</td><td>사업시행인가</td><td>시공사 선정</td><td>본지구 지정</td></tr>
-      <tr><td>철거 예상</td><td><b>2029~30</b></td><td>2029~30</td><td>2030~32</td></tr>
-      <tr><td>입주 예상</td><td><b>2033~34</b></td><td>2033~35</td><td>2034~36</td></tr>
+      <tr><td>철거 예상</td><td>2029~30</td><td>2029~30</td><td>2030~32</td></tr>
+      <tr><td>입주 예상</td><td>2033~34</td><td>2033~35</td><td>2034~36</td></tr>
       <tr><td>입주 시 예상 시세</td><td>30~32억</td><td>28~30억</td><td>33~35억</td></tr>
-      <tr><td>핵심 제약</td><td><b>송파 끝자락 + 뉴타운 완성까지 장기</b></td><td><b>우리 선호입지 아님 + 역 접근성</b></td><td><b>소송 실패 시 빌라 가치 리스크</b></td></tr>
+      <tr><td>핵심 제약</td><td>송파 끝자락 · 뉴타운 완성 장기</td><td>비선호 입지 · 역 접근성</td><td>소송 실패 시 빌라 가치 리스크</td></tr>
     </tbody>
   </table>
   <p class="note">※ 마천3 공시가는 재개발닷컴 최근 실거래를 크로스체크해 수정. 11억 초반은 3억 후반, 11억 후반은 5억 초반 사례가 있어 ‘3~4억대’로 단정하지 않고 범위로 표시.</p>
@@ -338,7 +362,9 @@ button:disabled{opacity:.35;cursor:not-allowed}
     ② 상도15가 향후 마천3보다 상급지가 되거나 더 높은 수익률을 낼 근거가 있는가?<br>
     ③ 약수의 소송 실패 가능성을 감수할 만큼 기대수익과 입지가 압도적인가?<br>
     ④ 현재 우리 예산으로 이 셋보다 더 좋은 다른 정비사업 선택지가 있는가?<br>
-    ⑤ 투자 후 신혼 실거주 자금까지 고려하면 실제로 감당 가능한 선택은 어디인가?
+    ⑤ 투자 후 신혼 실거주 자금까지 고려하면 실제로 감당 가능한 선택은 어디인가?<br>
+    ⑥ 약수를 산 뒤 별도로 <b>실거주용·헷지용 아파트</b>를 하나 더 가져가는 전략이 가능하다면, 우리 예산과 출퇴근·신혼생활을 고려해 어디가 적합한가?<br>
+    ⑦ 위 전략을 여자친구 명의 등으로 실행했을 때 <b>약수 현물보상 무주택 요건에 문제가 없는지</b>, 혼인신고 시점까지 포함해 사전에 확인할 수 있는가?
   </div>
 </section>
 
